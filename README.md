@@ -346,5 +346,3 @@ In a 3 million sample of ultsys users the email address was available for each u
 |Percentage of unique last names      | 98%      |
 
 _Ultsys Users First and Last Name Frequencies_
-
-***# caging
