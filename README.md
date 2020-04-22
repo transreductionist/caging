@@ -10,7 +10,7 @@
 
 ## The Caging Requirements
 
-An important aspect of a donation is the categorization of an online donor as an NUSA. A donor may donate anonymously, and  the code attempts to determine whether the donor "looks" like an existing user account. The caging requirements were first outlined on the Donations Team project page [Caging Requirements (5 December 2017 jeturcotte)](https://github.com/orgs/NumbersUSA/teams/donate/discussions/8)
+An important aspect of a donation is the categorization of an online donor as an NUSA. A donor may donate anonymously, and  the code attempts to determine whether the donor "looks" like an existing user account. The caging requirements were first outlined on the Donations Team project page Caging Requirements.
 
 1. If the user is logged in, `donation.gift.user_id` gets their ID
 2. If they are not logged in, try: match on email OR (firstname AND lastname AND zipcode)
@@ -36,10 +36,10 @@ The attributes of a user vary in their discriminating value. Here is a short dis
    - Looking at users with a full name appearing more than 100 times (30) in the user database the following appear more
      than 5 times within the same zip code. There are a total of 27 full names, of which only 2 are not within the Puerto
      Rico zip code. The list does not include last names which are empty strings.
-        - John Adamoyurka appears 9 times for the zip code 0 (Puerto Rico or perhaps empty field).
-        - David Allemore appears 14 times for the zip code 0.
-        - David Martin appears 5 times for the zip code 77375.
-        - Charles Millensifer appears 6 times for the zip code 2893.
+        - John Ad***yurka appears 9 times for the zip code 0 (Puerto Rico or perhaps empty field).
+        - David Al***ore appears 14 times for the zip code 0.
+        - David ***tin appears 5 times for the zip code 77375.
+        - Charles Mi***nsifer appears 6 times for the zip code 2893.
    - An initial examination shows that most names occurring over a 100 times appear 1 or 2 times in any given zip code
      and those that appear 2 times are typically the same donor. This is why zip code with the full name can be a good
      discriminator. It it appears 2 times it is likely a duplicate user.
@@ -61,8 +61,8 @@ The attributes of a user vary in their discriminating value. Here is a short dis
     - So if a user's email address is in the database, and a donor is returning using that same email address the
       match is unique.
     - Using `email || ( first_name && last_name && zip_code )` will miss this common case. Here is such an example:
-        - Don Adams, 32162, donadams@gmail.com
-        - Donald Adams, 32162, dadams@hotmail.com
+        - Don Ad***, 32162, don***@gmail.com
+        - Donald A***, 32162, d***@hotmail.com
     - Duplicate users often appear with both a different first name and email address.
     - The domain name is often different, but the user name will typically have similar characters.
 - The phone number, is a relatively strong discriminating attribute, when they are included.
@@ -202,8 +202,8 @@ Here is an example of a hard misclassification.
 ***
 |first name        |last name     |zip code      |address                       |email|phone|
 |:-----------------|:-------------|--------------|:-----------------------------|:----|:----|
-|matthew           |soren         |84020         |1934 e fielding hill ln |matts@nerospro.com|4252245273|
-|matthew           |soren         |84020         |1981 e brookings dr     |nerosllc@gmail.com|8014941066|
+|matthew           |s***en         |84020         |1934 e f***ing hill ln |ma***@nerospro.com|***2245273|
+|matthew           |s***en         |84020         |1981 e br***ngs dr     |ne***lc@gmail.com|***4941066|
 
 _Hard misclassification for a donor categorized as exists [1, 1, 1, 0, 0, 0]_
 ***
@@ -213,8 +213,8 @@ Here is an example of a soft misclassification because of a lack of discriminati
 ***
 |first name        |last name     |zip code      |address                       |email|phone|
 |:-----------------|:-------------|--------------|:-----|:----|:----|
-|john a.           |thomas        |0             |      |fathomas@mindspring.com |0|
-|john a.   |thomas   |0   |  |jatbhnj@aol.com|0|
+|john a.           |tho***        |0             |      |fat***s@mindspring.com |0|
+|john a.           |tho***        |0             |      |***bhj@aol.com|0|
 
 _Soft misclassification for a donor categorized as exists [1, 1, 1, 0, 0, 0]_
 ***
@@ -224,8 +224,8 @@ Here is an example of a hard misclassification with a match on the phone number:
 ***
 |first name        |last name     |zip code      |address|email|phone|
 |:-----------------|:-------------|--------------|:-----|:----|:----|
-|michael|oshea|88030|700 clark st#142 |oekim@ebtv.net|5055463541|
-|michael|oshea|88030|700 clark st#142|oekim@webtv.net|5055463541|
+|michael|o***a|88030|700 c***k st#142 |o***m@ebtv.net|50***63541|
+|michael|o***a|88030|700 c***k st#142|o***m@webtv.net|50***63541|
 
 _Hard misclassification for a donor categorized as exists [1, 1, 1, 0, 0, 1]_
 ***
@@ -251,8 +251,8 @@ _Number of rows misclassified for donors found to be new_
 ***
 |first name        |last name     |zip code      |address                       |email|phone|
 |:-----------------|:-------------|--------------|:-----|:----|:----|
-|ruchard g.|varna|33760|eastwood shores 2907 lichen ln|moshue2@rcoketmail.com|7275361150|
-|richard g.|varna|33760|eastwood shores 2907 lichen ln|moshue2@rocketmail.com|7275361150|
+|ruchard g.|v***a|33760|e***wood shores 2*** lichen ln|mo***e2@rcoketmail.com|7***361150|
+|richard g.|v***a|33760|e***wood shores 2*** lichen ln|mo***e2@rocketmail.com|7***361150|
 
 _Hard misclassification for a donor categorized as new [0, 1, 1, 1, 0, 1]_
 ***
@@ -260,8 +260,8 @@ _Hard misclassification for a donor categorized as new [0, 1, 1, 1, 0, 1]_
 ***
 |first name        |last name     |zip code      |address                       |email|phone|
 |:-----------------|:-------------|--------------|:-----|:----|:----|
-|wayne and mary|patton|37221|525 westward winds drive|waynepatton@comcast.net   |6156464543|
-|wayne         |patton|37221|525 westward winds dr.  |waynepatton1@bellsouth.net|6156464543|
+|wayne and mary|p***n|37221|525 ***tard winds drive|waypa***n@comcast.net   |61***64543|
+|wayne         |p***n|37221|525 ***tard winds dr.  |waypa***n1@bellsouth.net|61***64543|
 
 _Soft misclassification for a donor categorized as new [0, 1, 1, 1, 0, 1]_
 ***
@@ -277,8 +277,8 @@ Here are several donors paired with their caged result, which demonstrate the di
 ***
 |email                       |full name      |street address               |zip  |phone number|
 |:---------------------------|:--------------|:----------------------------|:----|:-----------|
-|promise@server.net          |KC Anonn       |123 Maple                    |32202|9044444444  |
-|sunrise@harbor.com          |KC Anon        |123 Maple                    |33928|9729925830  |
+|p***is@server.net          |KC Anonn       |123 Maple                    |32202|9***444444  |
+|s***is@harbor.com          |KC Anon        |123 Maple                    |33928|9***925830  |
 
 _Interesting examples 1_
 ***
@@ -286,8 +286,8 @@ _Interesting examples 1_
 ***
 |email                       |full name      |street address               |zip  |phone number|
 |:---------------------------|:--------------|:----------------------------|:----|:-----------|
-|AAonmesa@juno.com           |Alexander Brown|261 Hazel Lane               |93444|8059293310  |
-|a-brown@webtv.net           |Al Brown       |261 Hazel Lane               |93444|8059293310  |
+|AA***sa@juno.com           |Alexander ***wn|261 H***l Lane               |93444|8***293310  |
+|a-***w@webtv.net           |Al ***wn       |261 H***l Lane               |93444|8***293310  |
 
 _Interesting examples 2_
 ***
@@ -304,8 +304,8 @@ _Interesting examples 3_
 ***
 |email                       |full name      |street address               |zip  |phone number|
 |:---------------------------|:--------------|:----------------------------|:----|:-----------|
-|crannis@adelphia.net        |Vernon Annis   |244 Holbrook Bay Commons D35 |5857 |8023341653  |
-|annisvp@comcast.net         |Vernon Annis   |244 Holbrook Bay Commons D3-5|58570|8023341653  |
+|cr***is@adelphia.net        |V***on Annis   |244 Ho***ook Bay Co***ns D35 |5857 |8***341653  |
+|a***svp@comcast.net         |V***on Annis   |244 Ho***ook Bay Co***ns D3-5|58570|8***341653  |
 
 _Interesting examples 4_
 ***
@@ -313,8 +313,8 @@ _Interesting examples 4_
 ***
 |email                       |full name      |street address               |zip  |phone number|
 |:---------------------------|:--------------|:----------------------------|:----|:-----------|
-|beverleecoxmontana@gmail.com|Bev Cox        |877 Haring Lane              |32757|4068504878  |
-|beverlee@cablemt.net        |Bev Cox        |244 1875 Pheasant Brook Dr   |59044|4068504878  |
+|b***leecoxmontana@gmail.com|Bev ***        |877 H***g Lane              |32757|4***504878  |
+|b***lee@cablemt.net        |Bev ***        |244 1875 P***ant Brook Dr   |59044|4***504878  |
 
 _Interesting examples 5_
 ***
@@ -322,8 +322,8 @@ _Interesting examples 5_
 ***
 |email                       |full name      |street address               |zip  |phone number|
 |:---------------------------|:--------------|:----------------------------|:----|:-----------|
-|cecox04@yahoo.con           |Carolyn Cox    |5392 Fm 226                  |75961|9365640625  |
-|cecox04@yahoo.com           |Carolyn Cox    |5148 Fm 226                  |75978|9365640625  |
+|ce***4@yahoo.con           |Carolyn ***    |5392 *** 226                  |75961|9***640625  |
+|ce***4@yahoo.com           |Carolyn ***    |5148 *** 226                  |75978|9***640625  |
 
 _Interesting examples 6_
 ***
