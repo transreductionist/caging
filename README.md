@@ -61,8 +61,8 @@ The attributes of a user vary in their discriminating value. Here is a short dis
     - So if a user's email address is in the database, and a donor is returning using that same email address the
       match is unique.
     - Using `email || ( first_name && last_name && zip_code )` will miss this common case. Here is such an example:
-        - Don Ad***, 32162, don***@gmail.com
-        - Donald A***, 32162, d***@hotmail.com
+        - Don A***, 32062, don***@gmail.com
+        - Donald A***, 32062, d***@hotmail.com
     - Duplicate users often appear with both a different first name and email address.
     - The domain name is often different, but the user name will typically have similar characters.
 - The phone number, is a relatively strong discriminating attribute, when they are included.
