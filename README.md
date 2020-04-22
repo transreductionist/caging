@@ -295,8 +295,8 @@ _Interesting examples 2_
 ***
 |email                       |full name      |street address               |zip  |phone number|
 |:---------------------------|:--------------|:----------------------------|:----|:-----------|
-|ajansbach@live.com          |ARLENE ANSBACH |N FARLEY AVE                 |64157|8165208402  |
-|ajanasbach@live.com         |Arlene Ansbach |N Farley Ave                 |64157|8165207182  |
+|ajansbach@live.com          |AR***E A***CH |N FA*** AVE                 |64157|8***208402  |
+|ajanasbach@live.com         |Ar***e A***ch |N Fa*** Ave                 |64157|8***207182  |
 
 _Interesting examples 3_
 ***
@@ -304,8 +304,8 @@ _Interesting examples 3_
 ***
 |email                       |full name      |street address               |zip  |phone number|
 |:---------------------------|:--------------|:----------------------------|:----|:-----------|
-|cr***is@adelphia.net        |V***on Annis   |244 Ho***k Bay Co***ns D35   |5857 |8***341653  |
-|a***svp@comcast.net         |V***on Annis   |244 Ho***k Bay Co***ns D3-5. |58570|8***341653  |
+|cr***is@adelphia.net        |V***on Annis   |244 H**k Bay Co***s D35   |5857 |8***341653  |
+|a***svp@comcast.net         |V***on Annis   |244 H**k Bay Co***s D3-5. |58570|8***341653  |
 
 _Interesting examples 4_
 ***
