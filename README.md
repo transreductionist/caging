@@ -304,8 +304,8 @@ _Interesting examples 3_
 ***
 |email                       |full name      |street address               |zip  |phone number|
 |:---------------------------|:--------------|:----------------------------|:----|:-----------|
-|cr***is@adelphia.net        |V***on Annis   |244 Ho***ook Bay Co***ns D35 |5857 |8***341653  |
-|a***svp@comcast.net         |V***on Annis   |244 Ho***ook Bay Co***ns D3-5|58570|8***341653  |
+|cr***is@adelphia.net        |V***on Annis   |244 Ho***k Bay Co***ns D35   |5857 |8***341653  |
+|a***svp@comcast.net         |V***on Annis   |244 Ho***k Bay Co***ns D3-5. |58570|8***341653  |
 
 _Interesting examples 4_
 ***
